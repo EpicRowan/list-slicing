@@ -113,13 +113,21 @@ def custom_remove(input_list, value):
     For example:
 
         >>> notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
+
         >>> custom_remove(notes, 'Do')
         >>> notes == ['Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
         True
 
     """
+    # print(id(input_list))
+    for i, item in enumerate(input_list):
+        if item == value:
+            # input_list = input_list[:i] + input_list[i+1:]
+            input_list[i:i+1] = []
+            break
+            # print(id(input_list))
 
-    pass
+
 
 
 def custom_pop(input_list):
@@ -137,8 +145,9 @@ def custom_pop(input_list):
         ['Jan', 'Feb']
 
     """
-
-    return None
+    popped = input_list[-1]
+    input_list[-1:] = []
+    return popped
 
 
 def custom_index(input_list, value):
